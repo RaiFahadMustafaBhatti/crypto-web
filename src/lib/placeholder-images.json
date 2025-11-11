@@ -1,3 +1,148 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "crypto-1",
+      "description": "Abstract network connections representing blockchain technology.",
+      "imageUrl": "https://images.unsplash.com/photo-1738082956242-d897b9177bba?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxuZXR3b3JrJTIwYWJzdHJhY3R8ZW58MHx8fHwxNzYyNzU1NDIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "network abstract"
+    },
+    {
+      "id": "crypto-2",
+      "description": "Close-up of a physical Bitcoin coin.",
+      "imageUrl": "https://images.unsplash.com/photo-1611281929181-da7cf871df4d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxiaXRjb2luJTIwY29pbnxlbnwwfHx8fDE3NjI3NTU1NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "bitcoin coin"
+    },
+    {
+      "id": "crypto-3",
+      "description": "Illustration of the Ethereum logo on a digital background.",
+      "imageUrl": "https://images.unsplash.com/photo-1655804472974-67e35a039ec6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxldGhlcmV1bSUyMGxvZ298ZW58MHx8fHwxNzYyNzgyMzkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ethereum logo"
+    },
+    {
+      "id": "crypto-4",
+      "description": "A developer working on smart contract code.",
+      "imageUrl": "https://images.unsplash.com/photo-1719253479632-61b2fdc77a65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkZXZlbG9wZXIlMjBjb2RlfGVufDB8fHx8MTc2MjgzNjg0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "developer code"
+    },
+    {
+      "id": "crypto-5",
+      "description": "Concept of Decentralized Finance (DeFi) with interconnected nodes.",
+      "imageUrl": "https://picsum.photos/seed/crypto5/600/400",
+      "imageHint": "DeFi concept"
+    },
+    {
+      "id": "crypto-6",
+      "description": "Digital art representing an NFT (Non-Fungible Token).",
+      "imageUrl": "https://images.unsplash.com/photo-1663603847374-06fedd8667c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxORlQlMjBhcnR8ZW58MHx8fHwxNzYyODM2ODg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "NFT art"
+    },
+    {
+      "id": "crypto-7",
+      "description": "Charts and graphs showing cryptocurrency market trends.",
+      "imageUrl": "https://images.unsplash.com/photo-1744473755637-e09f0c2fab41?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjcnlwdG8lMjBjaGFydHN8ZW58MHx8fHwxNzYyODM2ODg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto charts"
+    },
+    {
+      "id": "crypto-8",
+      "description": "A person using a hardware wallet to secure their crypto.",
+      "imageUrl": "https://images.unsplash.com/photo-1634024520691-251d965aef54?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxoYXJkd2FyZSUyMHdhbGxldHxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "hardware wallet"
+    },
+    {
+      "id": "crypto-9",
+      "description": "The concept of a blockchain with linked blocks.",
+      "imageUrl": "https://images.unsplash.com/photo-1668018064529-76c9849d6e0e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibG9ja2NoYWluJTIwYmxvY2tzfGVufDB8fHx8MTc2MjgzNjg4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blockchain blocks"
+    },
+    {
+      "id": "crypto-10",
+      "description": "A diagram explaining Proof of Stake (PoS).",
+      "imageUrl": "https://images.unsplash.com/photo-1676911809759-77bb68b691c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cHJvb2YlMjBzdGFrZXxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "proof stake"
+    },
+    {
+      "id": "crypto-11",
+      "description": "Global map with crypto transaction paths.",
+      "imageUrl": "https://images.unsplash.com/photo-1734503937317-3b88a42ac50c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxnbG9iYWwlMjBjcnlwdG98ZW58MHx8fHwxNzYyODM2ODg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "global crypto"
+    },
+    {
+      "id": "crypto-12",
+      "description": "Illustration of various altcoins.",
+      "imageUrl": "https://picsum.photos/seed/crypto12/800/500",
+      "imageHint": "altcoins variety"
+    },
+    {
+      "id": "crypto-13",
+      "description": "A server room representing crypto mining.",
+      "imageUrl": "https://images.unsplash.com/photo-1706498521366-71363d04755f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtaW5pbmclMjBmYXJtfGVufDB8fHx8MTc2MjgzNjg4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mining farm"
+    },
+    {
+      "id": "crypto-14",
+      "description": "People collaborating on a Decentralized Autonomous Organization (DAO).",
+      "imageUrl": "https://picsum.photos/seed/crypto14/800/500",
+      "imageHint": "DAO collaboration"
+    },
+    {
+      "id": "crypto-15",
+      "description": "A digital lock symbolizing cryptocurrency security.",
+      "imageUrl": "https://images.unsplash.com/photo-1634109018162-5ebf3d697b06?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjcnlwdG8lMjBzZWN1cml0eXxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto security"
+    },
+    {
+      "id": "crypto-16",
+      "description": "The Ripple (XRP) logo in a futuristic setting.",
+      "imageUrl": "https://images.unsplash.com/photo-1655228430443-956887bc35dc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxyaXBwbGUlMjB4cnB8ZW58MHx8fHwxNzYyNzgyMzkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ripple xrp"
+    },
+    {
+      "id": "crypto-17",
+      "description": "An illustration of Layer 2 scaling solutions.",
+      "imageUrl": "https://images.unsplash.com/photo-1738383558577-79ff133fdad8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxsYXllciUyMDJ8ZW58MHx8fHwxNzYyODM2ODg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "layer 2"
+    },
+    {
+      "id": "crypto-18",
+      "description": "A user interacting with a dApp on a smartphone.",
+      "imageUrl": "https://images.unsplash.com/photo-1565268878573-5f968e45c9fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtb2JpbGUlMjBkQXBwfGVufDB8fHx8MTc2MjgzNjg4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mobile dApp"
+    },
+    {
+      "id": "crypto-19",
+      "description": "Abstract visualization of the Metaverse.",
+      "imageUrl": "https://images.unsplash.com/photo-1722811722309-d4c8c09156cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZXRhdmVyc2UlMjBhYnN0cmFjdHxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "metaverse abstract"
+    },
+    {
+      "id": "crypto-20",
+      "description": "The concept of Web3, the next generation of the internet.",
+      "imageUrl": "https://images.unsplash.com/photo-1667422380246-3bed910ffae1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3ZWIzJTIwY29uY2VwdHxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web3 concept"
+    },
+    {
+      "id": "crypto-21",
+      "description": "Cardano (ADA) logo with a technical background.",
+      "imageUrl": "https://images.unsplash.com/photo-1622538521146-ed39c9fbcbbf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjYXJkYW5vJTIwYWRhfGVufDB8fHx8MTc2MjgzNjg4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cardano ada"
+    },
+    {
+      "id": "crypto-22",
+      "description": "A flowchart showing how yield farming works in DeFi.",
+      "imageUrl": "https://images.unsplash.com/photo-1759044858199-d7a134354c11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx5aWVsZCUyMGZhcm1pbmd8ZW58MHx8fHwxNzYyODM2ODg2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yield farming"
+    },
+    {
+      "id": "crypto-23",
+      "description": "A magnifying glass over a blockchain transaction.",
+      "imageUrl": "https://images.unsplash.com/photo-1735467547583-d9fc4503f238?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8YmxvY2tjaGFpbiUyMGFuYWx5c2lzfGVufDB8fHx8MTc2MjgzNjg4Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blockchain analysis"
+    },
+    {
+      "id": "crypto-24",
+      "description": "Two hands exchanging a digital coin, representing P2P transactions.",
+      "imageUrl": "https://images.unsplash.com/photo-1744282904073-dbaa24e9d74c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwMnAlMjB0cmFuc2FjdGlvbnxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "p2p transaction"
+    }
+  ]
 }

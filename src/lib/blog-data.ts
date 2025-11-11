@@ -1,0 +1,341 @@
+export type BlogContent = {
+  type: 'paragraph' | 'image' | 'heading';
+  content: string;
+};
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  date: string;
+  author: string;
+  featuredImageId: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  content: BlogContent[];
+};
+
+export const blogData: BlogPost[] = [
+  {
+    slug: 'what-is-bitcoin',
+    title: "What is Bitcoin? A Beginner's Guide to the First Crypto",
+    date: '2024-07-30',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-1',
+    category: 'Bitcoin',
+    tags: ['Beginner', 'Bitcoin', 'Cryptocurrency'],
+    excerpt: 'Bitcoin is the first decentralized digital currency. It was created in 2009 by an unknown person or group of people using the name Satoshi Nakamoto.',
+    content: [
+      { type: 'paragraph', content: 'Bitcoin is a decentralized digital currency, without a central bank or single administrator, that can be sent from user to user on the peer-to-peer bitcoin network without the need for intermediaries.' },
+      { type: 'heading', content: 'How Does It Work?' },
+      { type: 'paragraph', content: 'Transactions are verified by network nodes through cryptography and recorded in a public distributed ledger called a blockchain. Bitcoin is created as a reward for a process known as mining. They can be exchanged for other currencies, products, and services.' },
+      { type: 'image', content: 'crypto-2' },
+      { type: 'paragraph', content: 'As of recent years, thousands of merchants and vendors have started to accept bitcoin as payment, showcasing its growing adoption.' },
+    ],
+  },
+  {
+    slug: 'understanding-ethereum-and-smart-contracts',
+    title: 'Understanding Ethereum and Smart Contracts',
+    date: '2024-07-28',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-3',
+    category: 'Ethereum',
+    tags: ['Ethereum', 'Smart Contracts', 'dApps'],
+    excerpt: 'Ethereum is not just a cryptocurrency; it\'s a global, open-source platform for decentralized applications. At its core are smart contracts.',
+    content: [
+      { type: 'paragraph', content: 'Ethereum is a decentralized, open-source blockchain with smart contract functionality. Ether (ETH) is the native cryptocurrency of the platform. Among cryptocurrencies, Ether is second only to Bitcoin in market capitalization.' },
+      { type: 'heading', content: 'What are Smart Contracts?' },
+      { type: 'paragraph', content: 'Smart contracts are self-executing contracts with the terms of the agreement directly written into code. They run on the blockchain, so they are stored on a public database and cannot be changed. This makes them secure and reliable.' },
+      { type: 'image', content: 'crypto-4' },
+    ],
+  },
+  {
+    slug: 'exploring-decentralized-finance-defi',
+    title: 'Exploring Decentralized Finance (DeFi)',
+    date: '2024-07-25',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-5',
+    category: 'DeFi',
+    tags: ['DeFi', 'Finance', 'Blockchain'],
+    excerpt: 'Decentralized Finance (DeFi) is an emerging financial technology based on secure distributed ledgers similar to those used by cryptocurrencies.',
+    content: [
+      { type: 'paragraph', content: 'DeFi aims to build a new, internet-native financial system, using blockchains to replace traditional, centralized intermediaries. It allows for services like lending, borrowing, and trading without needing a bank.' },
+    ],
+  },
+  {
+    slug: 'nfts-explained-more-than-just-digital-art',
+    title: 'NFTs Explained: More Than Just Digital Art',
+    date: '2024-07-22',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-6',
+    category: 'NFTs',
+    tags: ['NFTs', 'Digital Art', 'Collectibles'],
+    excerpt: 'Non-Fungible Tokens (NFTs) have taken the world by storm. But what are they, and how do they work? We break it down for you.',
+    content: [
+        { type: 'paragraph', content: 'A non-fungible token (NFT) is a unique digital identifier that is recorded on a blockchain, and is used to certify ownership and authenticity. It cannot be copied, substituted, or subdivided.' },
+        { type: 'image', content: 'crypto-6' },
+    ],
+  },
+  {
+    slug: 'how-to-invest-in-cryptocurrency-safely',
+    title: 'How to Invest in Cryptocurrency Safely',
+    date: '2024-07-20',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-7',
+    category: 'Investing',
+    tags: ['Investing', 'Security', 'Beginner'],
+    excerpt: 'The crypto market can be volatile. Here are some essential tips for beginners looking to invest in cryptocurrencies safely and responsibly.',
+    content: [
+        { type: 'paragraph', content: 'Investing in cryptocurrency can be a rewarding venture, but it comes with its risks. The key is to do your own research, start small, and use reputable exchanges. Diversifying your portfolio is also a crucial strategy.' },
+        { type: 'image', content: 'crypto-8' },
+    ],
+  },
+  {
+    slug: 'the-technology-behind-blockchain',
+    title: 'The Technology Behind Blockchain',
+    date: '2024-07-18',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-9',
+    category: 'Technology',
+    tags: ['Blockchain', 'Technology', 'Decentralization'],
+    excerpt: 'Blockchain is the core technology behind most cryptocurrencies. But what makes it so revolutionary? Let\'s dive into the details of how it works.',
+    content: [
+      { type: 'paragraph', content: 'A blockchain is a growing list of records, called blocks, that are securely linked together using cryptography. Each block contains a cryptographic hash of the previous block, a timestamp, and transaction data.' },
+    ],
+  },
+  {
+    slug: 'proof-of-work-vs-proof-of-stake',
+    title: 'Proof-of-Work vs. Proof-of-Stake',
+    date: '2024-07-15',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-10',
+    category: 'Technology',
+    tags: ['PoW', 'PoS', 'Consensus'],
+    excerpt: 'Proof-of-Work (PoW) and Proof-of-Stake (PoS) are the two most common consensus mechanisms. We compare their pros and cons.',
+    content: [
+      { type: 'paragraph', content: 'Proof-of-Work, used by Bitcoin, involves miners solving complex mathematical problems. Proof-of-Stake, used by newer blockchains, involves participants locking up crypto to validate transactions.' },
+      { type: 'image', content: 'crypto-10' },
+    ],
+  },
+  {
+    slug: 'the-rise-of-altcoins',
+    title: 'The Rise of Altcoins: Exploring Beyond Bitcoin',
+    date: '2024-07-12',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-12',
+    category: 'Altcoins',
+    tags: ['Altcoins', 'Investing', 'Ethereum'],
+    excerpt: 'While Bitcoin is the king, there are thousands of other cryptocurrencies known as altcoins. What are they and which ones are worth watching?',
+    content: [
+      { type: 'paragraph', content: 'Altcoin is a term used to describe all cryptocurrencies other than Bitcoin. They range from large-cap coins like Ethereum and Ripple to smaller, more niche projects.' },
+    ],
+  },
+  {
+    slug: 'what-is-crypto-mining',
+    title: 'What is Crypto Mining?',
+    date: '2024-07-10',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-13',
+    category: 'Bitcoin',
+    tags: ['Mining', 'Bitcoin', 'PoW'],
+    excerpt: 'Crypto mining is the process by which new cryptocurrencies are created and new transactions are verified. Here’s a simple explanation.',
+    content: [
+      { type: 'paragraph', content: 'Mining is the backbone of the Proof-of-Work consensus mechanism. It involves using powerful computers to solve cryptographic puzzles. The first miner to solve the puzzle gets to add the next block to the blockchain and receives a reward.' },
+    ],
+  },
+  {
+    slug: 'daos-the-future-of-organizations',
+    title: 'DAOs: The Future of Organizations?',
+    date: '2024-07-08',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-14',
+    category: 'Technology',
+    tags: ['DAO', 'Decentralization', 'Governance'],
+    excerpt: 'Decentralized Autonomous Organizations (DAOs) are a new way to form organizations that are not governed by a central authority.',
+    content: [
+      { type: 'paragraph', content: 'A DAO is an organization represented by rules encoded as a computer program that is transparent, controlled by the organization members and not influenced by a central government. A DAO’s financial transaction record and program rules are maintained on a blockchain.' },
+    ],
+  },
+  {
+    slug: 'keeping-your-crypto-secure',
+    title: 'A Guide to Keeping Your Crypto Secure',
+    date: '2024-07-05',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-15',
+    category: 'Security',
+    tags: ['Security', 'Wallets', 'Beginner'],
+    excerpt: 'In the world of crypto, you are your own bank. This comes with great responsibility. Learn the best practices for keeping your digital assets safe.',
+    content: [
+      { type: 'paragraph', content: 'Security is paramount. Always use strong, unique passwords and enable two-factor authentication (2FA). Consider using a hardware wallet for long-term storage of significant amounts of crypto.' },
+    ],
+  },
+  {
+    slug: 'what-are-layer-2-scaling-solutions',
+    title: 'What are Layer 2 Scaling Solutions?',
+    date: '2024-07-01',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-17',
+    category: 'Technology',
+    tags: ['Layer 2', 'Scaling', 'Ethereum'],
+    excerpt: 'As blockchains like Ethereum become more popular, transaction fees can rise. Layer 2 solutions aim to solve this problem.',
+    content: [
+      { type: 'paragraph', content: 'Layer 2 refers to a secondary framework or protocol that is built on top of an existing blockchain system. The main goal of these protocols is to solve the transaction speed and scaling difficulties that are being faced by major cryptocurrency networks.' },
+    ],
+  },
+  {
+    slug: 'introduction-to-dapps',
+    title: 'An Introduction to Decentralized Applications (dApps)',
+    date: '2024-06-28',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-18',
+    category: 'dApps',
+    tags: ['dApps', 'Ethereum', 'Smart Contracts'],
+    excerpt: 'Decentralized applications, or dApps, are applications that run on a P2P network of computers rather than a single computer.',
+    content: [
+      { type: 'paragraph', content: 'dApps are like normal apps, but they are powered by smart contracts on a blockchain. This means they are decentralized, transparent, and censorship-resistant.' },
+    ],
+  },
+  {
+    slug: 'the-metaverse-and-crypto',
+    title: 'The Intersection of the Metaverse and Crypto',
+    date: '2024-06-25',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-19',
+    category: 'Metaverse',
+    tags: ['Metaverse', 'NFTs', 'Web3'],
+    excerpt: 'The metaverse is a vision for the next iteration of the internet, and cryptocurrencies and NFTs are set to play a huge role in it.',
+    content: [
+      { type: 'paragraph', content: 'In the metaverse, cryptocurrencies could serve as the native currency for transactions, while NFTs could represent ownership of digital assets like land, avatars, and items.' },
+    ],
+  },
+  {
+    slug: 'web3-the-next-evolution-of-the-internet',
+    title: 'Web3: The Next Evolution of the Internet',
+    date: '2024-06-22',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-20',
+    category: 'Web3',
+    tags: ['Web3', 'Decentralization', 'Technology'],
+    excerpt: 'Web3 is the idea for a new iteration of the World Wide Web based on blockchain technology, which incorporates concepts such as decentralization and token-based economics.',
+    content: [
+      { type: 'paragraph', content: 'Proponents of Web3 envision a future where users have more control over their data and online experiences, breaking free from the dominance of big tech companies.' },
+    ],
+  },
+  {
+    slug: 'what-is-cardano-ada',
+    title: 'A Look at Cardano (ADA)',
+    date: '2024-06-20',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-21',
+    category: 'Altcoins',
+    tags: ['Cardano', 'ADA', 'PoS'],
+    excerpt: 'Cardano is a proof-of-stake blockchain platform that says its goal is to allow "changemakers, innovators and visionaries" to bring about positive global change.',
+    content: [
+      { type: 'paragraph', content: 'Founded by one of Ethereum\'s co-founders, Cardano takes a research-intensive approach to its development, with a focus on sustainability, scalability, and interoperability.' },
+    ],
+  },
+  {
+    slug: 'yield-farming-in-defi',
+    title: 'A Beginner\'s Guide to Yield Farming in DeFi',
+    date: '2024-06-18',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-22',
+    category: 'DeFi',
+    tags: ['DeFi', 'Yield Farming', 'Investing'],
+    excerpt: 'Yield farming is a way to generate rewards with cryptocurrency holdings. In short, it means locking up cryptocurrencies and getting rewards.',
+    content: [
+      { type: 'paragraph', content: 'Yield farming, also referred to as liquidity mining, is a way to generate rewards with cryptocurrency holdings. In simple terms, it means locking up cryptocurrencies and getting rewards.' },
+    ],
+  },
+  {
+    slug: 'how-to-read-a-blockchain-explorer',
+    title: 'How to Read a Blockchain Explorer',
+    date: '2024-06-15',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-23',
+    category: 'Tools',
+    tags: ['Tools', 'Blockchain', 'Beginner'],
+    excerpt: 'A blockchain explorer is a tool that allows you to view all the transactions that have ever taken place on a particular blockchain. Here\'s how to use one.',
+    content: [
+      { type: 'paragraph', content: 'Using a blockchain explorer, you can search for transactions, addresses, blocks, and other information on the blockchain. It provides a transparent window into the workings of a cryptocurrency network.' },
+    ],
+  },
+  {
+    slug: 'understanding-p2p-transactions',
+    title: 'Understanding Peer-to-Peer (P2P) Transactions',
+    date: '2024-06-12',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-24',
+    category: 'Technology',
+    tags: ['P2P', 'Transactions', 'Bitcoin'],
+    excerpt: 'Peer-to-peer (P2P) technology is at the heart of what makes cryptocurrencies like Bitcoin decentralized. Let\'s explore what it means.',
+    content: [
+      { type: 'paragraph', content: 'P2P networks allow participants to interact directly with each other without the need for a central intermediary. In the context of crypto, this means you can send money directly to someone else without a bank being involved.' },
+    ],
+  },
+  {
+    slug: 'the-role-of-ripple-xrp',
+    title: 'The Role of Ripple (XRP) in Global Payments',
+    date: '2024-06-10',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-16',
+    category: 'Altcoins',
+    tags: ['Ripple', 'XRP', 'Finance'],
+    excerpt: 'Ripple and its cryptocurrency, XRP, aim to revolutionize international payments by making them faster, cheaper, and more reliable.',
+    content: [
+      { type: 'paragraph', content: 'Unlike many other cryptocurrencies, Ripple is focused on partnering with traditional financial institutions to improve their cross-border payment systems. XRP acts as a bridge currency to facilitate these transactions quickly.' },
+    ],
+  },
+  {
+    slug: 'what-are-hardware-wallets',
+    title: 'What Are Hardware Wallets and Why You Need One',
+    date: '2024-06-08',
+    author: 'Alex Johnson',
+    featuredImageId: 'crypto-8',
+    category: 'Security',
+    tags: ['Security', 'Wallets', 'Hardware'],
+    excerpt: 'For serious crypto investors, a hardware wallet is a non-negotiable tool for securing digital assets.',
+    content: [
+      { type: 'paragraph', content: 'A hardware wallet is a physical device that stores your private keys offline. This makes it immune to online hacking attempts, providing a much higher level of security than software wallets.' },
+    ],
+  },
+  {
+    slug: 'analyzing-crypto-market-trends',
+    title: 'How to Analyze Crypto Market Trends',
+    date: '2024-06-05',
+    author: 'Samantha Lee',
+    featuredImageId: 'crypto-7',
+    category: 'Investing',
+    tags: ['Investing', 'Analysis', 'Charts'],
+    excerpt: 'Technical and fundamental analysis are two common methods for analyzing the crypto market. Here\'s an introduction to both.',
+    content: [
+      { type: 'paragraph', content: 'Technical analysis involves studying price charts and market statistics to predict future price movements. Fundamental analysis involves evaluating a project\'s underlying value based on its technology, team, and market potential.' },
+    ],
+  },
+  {
+    slug: 'the-impact-of-regulation-on-crypto',
+    title: 'The Impact of Government Regulation on Crypto',
+    date: '2024-06-02',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-11',
+    category: 'Investing',
+    tags: ['Regulation', 'Government', 'Finance'],
+    excerpt: 'As cryptocurrencies become more mainstream, governments around the world are taking a closer look. What does this mean for the future of crypto?',
+    content: [
+      { type: 'paragraph', content: 'Regulation can be a double-edged sword. While it can bring legitimacy and stability to the market, it can also stifle innovation and growth. The regulatory landscape is constantly evolving and is a key factor for investors to watch.' },
+    ],
+  },
+  {
+    slug: 'exploring-the-solana-ecosystem',
+    title: 'Exploring the High-Speed Solana Ecosystem',
+    date: '2024-05-30',
+    author: 'Olivia White',
+    featuredImageId: 'crypto-2',
+    category: 'Altcoins',
+    tags: ['Solana', 'SOL', 'DeFi', 'NFTs'],
+    excerpt: 'Solana is a high-performance blockchain known for its incredibly fast transaction speeds and low costs. We take a tour of its burgeoning ecosystem.',
+    content: [
+      { type: 'paragraph', content: 'Solana has emerged as a major competitor to Ethereum, attracting a wide range of DeFi projects, NFT marketplaces, and dApps due to its scalability and vibrant developer community.' },
+    ],
+  },
+];
