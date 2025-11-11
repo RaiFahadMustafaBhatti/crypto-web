@@ -3,6 +3,7 @@ import './globals.css';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from "@/components/ui/toaster";
+import { AdPlaceholder } from '@/components/ad-placeholder';
 
 export const metadata: Metadata = {
   title: 'CryptoVerse Explorer',
@@ -24,7 +25,17 @@ export default function RootLayout({
       <body className="font-body antialiased flex flex-col min-h-screen bg-background text-foreground">
         <Header />
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+          <div className="flex justify-center gap-4 mb-8">
+            <AdPlaceholder />
+            <AdPlaceholder className="hidden sm:block" />
+            <AdPlaceholder className="hidden lg:block" />
+          </div>
           {children}
+           <div className="flex justify-center gap-4 mt-8">
+            <AdPlaceholder />
+            <AdPlaceholder className="hidden sm:block" />
+            <AdPlaceholder className="hidden lg:block" />
+          </div>
         </main>
         <Footer />
         <Toaster />
