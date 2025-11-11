@@ -18,7 +18,7 @@ export function PaginationControls({ currentPage, totalPages, baseUrl = '/' }: P
   return (
     <div className="flex justify-center items-center gap-4 mt-12">
       <Button asChild variant="outline" disabled={!hasPrev} className="disabled:cursor-not-allowed">
-        <Link href={hasPrev ? `${baseUrl}?page=${prevPage}` : '#'} >
+        <Link href={hasPrev ? `${baseUrl}?page=${prevPage}` : '#'} target="_blank" rel="noopener noreferrer">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Previous
         </Link>
@@ -27,7 +27,7 @@ export function PaginationControls({ currentPage, totalPages, baseUrl = '/' }: P
         Page {currentPage} of {totalPages}
       </span>
       <Button asChild variant="outline" disabled={!hasNext} className="disabled:cursor-not-allowed">
-        <Link href={hasNext ? `${baseUrl}?page=${nextPage}` : '#'} >
+        <Link href={hasNext ? `${baseUrl}?page=${nextPage}` : '#'} target="_blank" rel="noopener noreferrer">
           Next
           <ArrowRight className="ml-2 h-4 w-4" />
         </Link>

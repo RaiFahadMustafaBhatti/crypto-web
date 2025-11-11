@@ -18,6 +18,8 @@ export function BlogCard({ post }: BlogCardProps) {
         href={`/blog/${post.slug}`}
         className="block"
         aria-label={`Read more about ${post.title}`}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <div className="overflow-hidden">
           {image && (
@@ -41,6 +43,8 @@ export function BlogCard({ post }: BlogCardProps) {
             href={`/blog/${post.slug}`}
             className="block"
             aria-label={`Read more about ${post.title}`}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <h3 className="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
               {post.title}
