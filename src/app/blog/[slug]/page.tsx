@@ -1,4 +1,6 @@
-import { notFound } from 'next/navigation';
+'use client';
+
+import { notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { blogData, type BlogContent } from '@/lib/blog-data';
@@ -6,7 +8,9 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
 import { BlogCard } from '@/components/blog-card';
 import { Card } from '@/components/ui/card';
+import React from 'react';
 
+// This is a server component part, for fetching data
 async function getPostAndRelated(slug: string) {
   const post = blogData.find((p) => p.slug === slug);
   if (!post) {
@@ -23,8 +27,15 @@ async function getPostAndRelated(slug: string) {
   return { post, relatedPosts };
 }
 
+// This is a client component part for handling interactions
 function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
+  const router = useRouter();
   const { type, content } = contentItem;
+
+  const handleImageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.back();
+  };
 
   switch (type) {
     case 'heading':
@@ -36,7 +47,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
       if (!image) return null;
       return (
         <figure className="my-8">
-          <Link href={image.imageUrl} target="_blank" rel="noopener noreferrer" className="block group">
+          <a href="#" onClick={handleImageClick} className="block group cursor-pointer">
             <Image
               src={image.imageUrl}
               alt={image.description}
@@ -45,7 +56,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
               className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover transition-opacity group-hover:opacity-90"
               data-ai-hint={image.imageHint}
             />
-          </Link>
+          </a>
           <figcaption className="text-center text-sm text-muted-foreground mt-3">{image.description}</figcaption>
         </figure>
       );
@@ -54,20 +65,32 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
   }
 }
 
-export async function generateStaticParams() {
-  return blogData.map((post) => ({
-    slug: post.slug,
-  }));
-}
+// We need a wrapper component to handle the async data fetching and pass it to the client component.
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const [data, setData] = React.useState<{post: any, relatedPosts: any[]}|null>(null);
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const { post, relatedPosts } = await getPostAndRelated(params.slug);
+  React.useEffect(() => {
+    getPostAndRelated(params.slug).then(setData);
+  }, [params.slug]);
+
+  if (!data) {
+    // You can render a loading state here
+    return <div>Loading...</div>;
+  }
+
+  const { post, relatedPosts } = data;
 
   if (!post) {
     notFound();
   }
 
   const featuredImage = PlaceHolderImages.find(img => img.id === post.featuredImageId);
+  const router = useRouter();
+
+  const handleFeaturedImageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    router.back();
+  };
 
   return (
     <article>
@@ -82,7 +105,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
         {featuredImage && (
           <div className="mb-8">
-             <Link href={featuredImage.imageUrl} target="_blank" rel="noopener noreferrer" className="block group">
+             <a href="#" onClick={handleFeaturedImageClick} className="block group cursor-pointer">
               <Image
                 src={featuredImage.imageUrl}
                 alt={post.title}
@@ -92,7 +115,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 priority
                 data-ai-hint={featuredImage.imageHint}
               />
-            </Link>
+            </a>
           </div>
         )}
 
@@ -124,4 +147,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       )}
     </article>
   );
+}
+
+export async function generateStaticParams() {
+  return blogData.map((post) => ({
+    slug: post.slug,
+  }));
 }
