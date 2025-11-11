@@ -8,7 +8,7 @@ import React from 'react';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild>
-    <Link href={href} target="_blank" rel="noopener noreferrer">
+    <Link href={href}>
       {children}
     </Link>
   </Button>
@@ -37,7 +37,7 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-2">
             {navLinks}
             <Button variant="outline" asChild>
-               <Link href="#" target="_blank" rel="noopener noreferrer">
+               <Link href="#">
                 <LogIn className="mr-2 h-4 w-4" />
                 Login
                </Link>
@@ -60,7 +60,7 @@ export function Header() {
                   <nav className="flex flex-col space-y-2 px-4" onClick={() => setOpen(false)}>
                     {navLinks}
                      <Button variant="outline" asChild>
-                       <Link href="#" target="_blank" rel="noopener noreferrer">
+                       <Link href="#">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
                        </Link>

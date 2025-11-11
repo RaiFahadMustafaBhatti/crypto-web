@@ -16,8 +16,6 @@ export function BlogCard({ post }: BlogCardProps) {
     <Card className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
       <Link
         href={`/blog/${post.slug}`}
-        target="_blank"
-        rel="noopener noreferrer"
         className="block"
         aria-label={`Read more about ${post.title}`}
       >
@@ -41,8 +39,6 @@ export function BlogCard({ post }: BlogCardProps) {
           </Badge>
           <Link
             href={`/blog/${post.slug}`}
-            target="_blank"
-            rel="noopener noreferrer"
             className="block"
             aria-label={`Read more about ${post.title}`}
           >
