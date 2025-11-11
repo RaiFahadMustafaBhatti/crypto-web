@@ -82,15 +82,17 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
         {featuredImage && (
           <div className="mb-8">
-            <Image
-              src={featuredImage.imageUrl}
-              alt={post.title}
-              width={1200}
-              height={600}
-              className="rounded-xl shadow-lg w-full object-cover aspect-video"
-              priority
-              data-ai-hint={featuredImage.imageHint}
-            />
+             <Link href={featuredImage.imageUrl} target="_blank" rel="noopener noreferrer" className="block group">
+              <Image
+                src={featuredImage.imageUrl}
+                alt={post.title}
+                width={1200}
+                height={600}
+                className="rounded-xl shadow-lg w-full object-cover aspect-video transition-opacity group-hover:opacity-90"
+                priority
+                data-ai-hint={featuredImage.imageHint}
+              />
+            </Link>
           </div>
         )}
 
