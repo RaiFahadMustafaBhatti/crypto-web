@@ -1,6 +1,11 @@
 import { notFound } from 'next/navigation';
 import { blogData } from '@/lib/blog-data';
 import { BlogPostClientPage } from './blog-post-client-page';
+import type { Metadata } from 'next'
+
+type Props = {
+  params: { slug: string }
+}
 
 async function getPostAndRelated(slug: string) {
   const post = blogData.find((p) => p.slug === slug);
@@ -18,7 +23,31 @@ async function getPostAndRelated(slug: string) {
   return { post, relatedPosts };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  const { post } = await getPostAndRelated(params.slug);
+ 
+  if (!post) {
+    return {
+        title: "Post Not Found",
+        description: "This blog post could not be found.",
+    }
+  }
+
+  return {
+    title: `${post.title} | CryptoVerse Explorer`,
+    description: post.excerpt,
+    openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        type: 'article',
+        url: `/blog/${post.slug}`,
+    }
+  }
+}
+
+export default async function BlogPostPage({ params }: { params: { slug:string } }) {
   const { post, relatedPosts } = await getPostAndRelated(params.slug);
 
   if (!post) {
