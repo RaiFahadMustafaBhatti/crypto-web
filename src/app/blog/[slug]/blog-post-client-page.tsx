@@ -7,15 +7,10 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
 import { BlogCard } from '@/components/blog-card';
 import React from 'react';
+import Link from 'next/link';
 
 function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
-  const router = useRouter();
   const { type, content } = contentItem;
-
-  const handleImageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.back();
-  };
 
   switch (type) {
     case 'heading':
@@ -27,7 +22,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
       if (!image) return null;
       return (
         <figure className="my-8">
-          <a href="#" onClick={handleImageClick} className="block group cursor-pointer">
+          <Link href="/" target="_blank" rel="noopener noreferrer" className="block group cursor-pointer">
             <Image
               src={image.imageUrl}
               alt={image.description}
@@ -36,7 +31,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
               className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover transition-opacity group-hover:opacity-90"
               data-ai-hint={image.imageHint}
             />
-          </a>
+          </Link>
           <figcaption className="text-center text-sm text-muted-foreground mt-3">{image.description}</figcaption>
         </figure>
       );
@@ -47,13 +42,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
 
 export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, relatedPosts: BlogPost[] }) {
   const featuredImage = PlaceHolderImages.find(img => img.id === post.featuredImageId);
-  const router = useRouter();
-
-  const handleFeaturedImageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.back();
-  };
-
+  
   return (
     <article>
       <div className="max-w-4xl mx-auto">
@@ -67,7 +56,7 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
 
         {featuredImage && (
           <div className="mb-8">
-             <a href="#" onClick={handleFeaturedImageClick} className="block group cursor-pointer">
+             <Link href="/" target="_blank" rel="noopener noreferrer" className="block group cursor-pointer">
               <Image
                 src={featuredImage.imageUrl}
                 alt={post.title}
@@ -77,7 +66,7 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
                 priority
                 data-ai-hint={featuredImage.imageHint}
               />
-            </a>
+            </Link>
           </div>
         )}
 
