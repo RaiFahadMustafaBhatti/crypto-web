@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Separator } from '@/components/ui/separator';
+import { AdPlaceholder } from '@/components/ad-placeholder';
+import React from 'react';
 
 const POSTS_PER_PAGE = 6;
 
@@ -24,6 +26,18 @@ export default function Home({
   const endIndex = startIndex + POSTS_PER_PAGE;
   const postsToShow = blogData.slice(startIndex, endIndex);
 
+  // Insert an ad in the middle of the posts
+  const postsWithAd: (React.ReactNode)[] = postsToShow.map((post) => (
+    <BlogCard 
+      key={post.slug} 
+      post={post}
+    />
+  ));
+  if (postsWithAd.length > 2) {
+    postsWithAd.splice(Math.floor(postsWithAd.length / 2), 0, <AdPlaceholder key="ad-in-feed" className="h-full" />);
+  }
+
+
   return (
     <div className="space-y-12">
       <section className="text-center py-8 md:py-12">
@@ -34,7 +48,7 @@ export default function Home({
           Your ultimate guide to understanding the world of digital currencies, blockchain, and decentralized finance. Get started on your journey today.
         </p>
         <Button asChild size="lg">
-          <Link href="/?page=1" target="_blank" rel="noopener noreferrer">
+          <Link href="/?page=1">
             Explore Blog <ArrowRight className="ml-2" />
           </Link>
         </Button>
@@ -42,12 +56,7 @@ export default function Home({
 
       <section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {postsToShow.map((post) => (
-            <BlogCard 
-              key={post.slug} 
-              post={post}
-            />
-          ))}
+          {postsWithAd}
         </div>
       </section>
       
