@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { BlogPost } from '@/lib/blog-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { ScrollFadeIn } from './scroll-fade-in';
 
 type BlogCardProps = {
   post: BlogPost;
@@ -24,14 +25,16 @@ export function BlogCard({ post, className }: BlogCardProps) {
       >
         <div className="overflow-hidden">
           {image && (
-            <Image
-              src={image.imageUrl}
-              alt={post.title}
-              width={600}
-              height={400}
-              className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-              data-ai-hint={image.imageHint}
-            />
+            <ScrollFadeIn>
+              <Image
+                src={image.imageUrl}
+                alt={post.title}
+                width={600}
+                height={400}
+                className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                data-ai-hint={image.imageHint}
+              />
+            </ScrollFadeIn>
           )}
         </div>
       </Link>
