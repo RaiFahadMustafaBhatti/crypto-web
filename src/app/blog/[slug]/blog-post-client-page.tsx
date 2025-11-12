@@ -28,7 +28,7 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
               alt={image.description}
               width={800}
               height={500}
-              className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover transition-opacity group-hover:opacity-90"
+              className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
               data-ai-hint={image.imageHint}
             />
           </Link>
@@ -62,7 +62,7 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
                 alt={post.title}
                 width={1200}
                 height={600}
-                className="rounded-xl shadow-lg w-full object-cover aspect-video transition-opacity group-hover:opacity-90"
+                className="rounded-xl shadow-lg w-full object-cover aspect-video transition-transform duration-500 ease-in-out group-hover:scale-105"
                 priority
                 data-ai-hint={featuredImage.imageHint}
               />

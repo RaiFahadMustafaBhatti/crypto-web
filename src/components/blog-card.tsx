@@ -7,13 +7,14 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 type BlogCardProps = {
   post: BlogPost;
+  className?: string;
 };
 
-export function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post, className }: BlogCardProps) {
   const image = PlaceHolderImages.find((img) => img.id === post.featuredImageId);
 
   return (
-    <Card className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <Card className={`overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}>
       <Link
         href={`/blog/${post.slug}`}
         className="block"
@@ -28,7 +29,7 @@ export function BlogCard({ post }: BlogCardProps) {
               alt={post.title}
               width={600}
               height={400}
-              className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-48 object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
               data-ai-hint={image.imageHint}
             />
           )}
