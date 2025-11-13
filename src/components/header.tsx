@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, LogIn, Search } from 'lucide-react';
-import React from 'react';
+import React, { useState } from 'react';
 import { Input } from './ui/input';
+import { useRouter } from 'next/navigation';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-  <Button variant="ghost" asChild>
+  <Button variant="ghost" asChild className="main-nav-link">
     <Link href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </Link>
@@ -20,6 +21,30 @@ const SecondaryLink = ({ href, children }: { href: string, children: React.React
         {children}
     </Link>
 );
+
+const SearchBar = () => {
+    const router = useRouter();
+    const [query, setQuery] = useState('');
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (query.trim()) {
+            router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+        }
+    };
+    
+    return (
+        <form onSubmit={handleSearch} className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input 
+                placeholder="Search..." 
+                className="pl-10 h-9 w-48"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+            />
+        </form>
+    );
+};
 
 export function Header() {
   const [open, setOpen] = React.useState(false);
@@ -62,17 +87,14 @@ export function Header() {
                 </Link>
             </div>
              {/* Second Row */}
-            <div className="flex items-center justify-between h-14 border-t">
+            <div className="flex items-center justify-between h-14 border-t main-nav">
                  <nav className="flex items-center space-x-1">
                     {mainNavLinks}
                  </nav>
                  <div className="flex items-center gap-2">
-                    <div className="relative">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                        <Input placeholder="Search..." className="pl-10 h-9 w-48" />
-                    </div>
+                    <SearchBar />
                     <Button variant="outline" asChild>
-                       <Link href="#">
+                       <Link href="/login">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
                        </Link>
@@ -103,15 +125,12 @@ export function Header() {
                     CryptoVerse Explorer
                   </Link>
                    <div className="px-4">
-                        <div className="relative">
-                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                            <Input placeholder="Search..." className="pl-10 h-9 w-full" />
-                        </div>
+                        <SearchBar />
                    </div>
                   <nav className="flex flex-col space-y-2 px-4 flex-grow" onClick={() => setOpen(false)}>
                     {mainNavLinks}
                      <Button variant="outline" asChild>
-                       <Link href="#">
+                       <Link href="/login">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
                        </Link>

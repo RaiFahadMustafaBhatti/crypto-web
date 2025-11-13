@@ -73,6 +73,22 @@
   }
 }
 
+@layer components {
+    .main-nav {
+        @apply bg-blue-100;
+    }
+    .main-nav-link {
+        @apply hover:bg-gray-200;
+    }
+
+    .dark .main-nav {
+        @apply bg-blue-900/20;
+    }
+    .dark .main-nav-link {
+        @apply hover:bg-gray-700;
+    }
+}
+
 @layer utilities {
   @keyframes fade-in {
     from {
