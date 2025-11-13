@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, LogIn, Search } from 'lucide-react';
 import React, { useState } from 'react';
 import { Input } from './ui/input';
@@ -38,7 +38,7 @@ const SearchBar = () => {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input 
                 placeholder="Search..." 
-                className="pl-10 h-9 w-48"
+                className="pl-10 h-9 w-full"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
             />
@@ -87,7 +87,7 @@ export function Header() {
                 </Link>
             </div>
              {/* Second Row */}
-            <div className="flex items-center justify-between h-14 border-t main-nav">
+            <div className="flex items-center justify-between h-14 main-nav">
                  <nav className="flex items-center space-x-1">
                     {mainNavLinks}
                  </nav>
@@ -119,11 +119,14 @@ export function Header() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
-                <div className="flex flex-col space-y-4 py-6 h-full">
-                  <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary px-4">
+              <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
+                <SheetHeader className="p-4 border-b">
+                   <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                   <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary">
                     CryptoVerse Explorer
                   </Link>
+                </SheetHeader>
+                <div className="flex flex-col space-y-4 py-6 h-full">
                    <div className="px-4">
                         <SearchBar />
                    </div>
