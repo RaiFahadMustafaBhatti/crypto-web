@@ -7,6 +7,7 @@ import { Menu, LogIn, Search } from 'lucide-react';
 import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { useRouter } from 'next/navigation';
+import { Logo } from './logo';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild className="main-nav-link">
@@ -82,7 +83,8 @@ export function Header() {
         <div className="hidden md:flex flex-col">
             {/* First Row */}
             <div className="flex items-center justify-center h-16">
-                <Link href="/" className="text-3xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
+                 <Link href="/" className="flex items-center gap-2 text-3xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
+                    <Logo className="w-8 h-8" />
                     CryptoVerse Explorer
                 </Link>
             </div>
@@ -109,7 +111,8 @@ export function Header() {
 
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between h-16">
-           <Link href="/" className="text-xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
+           <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
+                <Logo className="w-6 h-6" />
                 CryptoVerse Explorer
             </Link>
             <Sheet open={open} onOpenChange={setOpen}>
@@ -121,7 +124,8 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                 <div className="flex flex-col space-y-4 py-6 h-full">
-                  <Link href="/" className="text-2xl font-headline font-bold text-primary px-4">
+                  <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary px-4">
+                     <Logo className="w-7 h-7" />
                     CryptoVerse Explorer
                   </Link>
                    <div className="px-4">

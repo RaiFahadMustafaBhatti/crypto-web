@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Separator } from '@/components/ui/separator';
-import { AdPlaceholder } from '@/components/ad-placeholder';
 import React from 'react';
 
 const POSTS_PER_PAGE = 6;
