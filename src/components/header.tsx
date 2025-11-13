@@ -3,8 +3,9 @@
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, LogIn } from 'lucide-react';
+import { Menu, LogIn, Search } from 'lucide-react';
 import React from 'react';
+import { Input } from './ui/input';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild>
@@ -35,22 +36,28 @@ export function Header() {
   return (
     <header className="bg-card border-b shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-4">
           <Link href="/" className="text-2xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
             CryptoVerse Explorer
           </Link>
           
           <nav className="hidden md:flex items-center space-x-1">
             {navLinks}
-            <Button variant="outline" asChild>
-               <Link href="#" target="_blank" rel="noopener noreferrer">
-                <LogIn className="mr-2 h-4 w-4" />
-                Login
-               </Link>
-            </Button>
+             <div className="flex items-center gap-2">
+                <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input placeholder="Search..." className="pl-10 h-9 w-48" />
+                </div>
+                <Button variant="outline" asChild>
+                   <Link href="#" target="_blank" rel="noopener noreferrer">
+                    <LogIn className="mr-2 h-4 w-4" />
+                    Login
+                   </Link>
+                </Button>
+            </div>
           </nav>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <Sheet open={open} onOpenChange={setOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -63,6 +70,12 @@ export function Header() {
                   <Link href="/" className="text-2xl font-headline font-bold text-primary px-4">
                     CryptoVerse Explorer
                   </Link>
+                   <div className="px-4">
+                        <div className="relative">
+                            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                            <Input placeholder="Search..." className="pl-10 h-9 w-full" />
+                        </div>
+                   </div>
                   <nav className="flex flex-col space-y-2 px-4" onClick={() => setOpen(false)}>
                     {navLinks}
                      <Button variant="outline" asChild>
