@@ -9,14 +9,14 @@ import { Input } from './ui/input';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild>
-    <Link href={href}>
+    <Link href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </Link>
   </Button>
 );
 
 const SecondaryLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <Link href={href} className="text-xs text-muted-foreground hover:text-primary transition-colors">
+    <Link href={href} className="text-xs text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
         {children}
     </Link>
 );
