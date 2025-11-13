@@ -143,6 +143,174 @@
       "description": "Two hands exchanging a digital coin, representing P2P transactions.",
       "imageUrl": "https://images.unsplash.com/photo-1744282904073-dbaa24e9d74c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwMnAlMjB0cmFuc2FjdGlvbnxlbnwwfHx8fDE3NjI4MzY4ODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "p2p transaction"
+    },
+    {
+      "id": "crypto-25",
+      "description": "An image showing the Bitcoin halving supply curve.",
+      "imageUrl": "https://images.unsplash.com/photo-1642502660197-455fc48b28f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxCaXRjb2luJTIwaGFsdmluZ3xlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "Bitcoin halving"
+    },
+    {
+      "id": "crypto-26",
+      "description": "A complex candlestick chart with various technical indicators.",
+      "imageUrl": "https://images.unsplash.com/photo-1748609700323-483a007ed311?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0ZWNobmljYWwlMjBhbmFseXNpc3xlbnwwfHx8fDE3NjI5NzM4MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "technical analysis"
+    },
+    {
+      "id": "crypto-27",
+      "description": "A collage of different altcoin logos.",
+      "imageUrl": "https://images.unsplash.com/photo-1737670388991-0d5fcb71f6b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbHRjb2luJTIwY29sbGFnZXxlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "altcoin collage"
+    },
+    {
+      "id": "crypto-28",
+      "description": "A balancing scale with dollar signs on one side and crypto symbols on the other.",
+      "imageUrl": "https://images.unsplash.com/photo-1646830662474-36e4d3bc0ffe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcnlwdG8lMjBiYWxhbmNlfGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto balance"
+    },
+    {
+      "id": "crypto-29",
+      "description": "Abstract, colorful patterns created by an algorithm.",
+      "imageUrl": "https://images.unsplash.com/photo-1644378311869-5540a140b77c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnZW5lcmF0aXZlJTIwYXJ0fGVufDB8fHx8MTc2MzAxMDI1OXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "generative art"
+    },
+    {
+      "id": "crypto-30",
+      "description": "A rocket ship taking off towards a moon with a Bitcoin logo.",
+      "imageUrl": "https://images.unsplash.com/photo-1664725391336-c7da1da43483?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcnlwdG8lMjByb2NrZXR8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto rocket"
+    },
+    {
+      "id": "crypto-31",
+      "description": "A person paying at a retail counter using their smartphone with a crypto app.",
+      "imageUrl": "https://images.unsplash.com/photo-1634228932970-56d6eb1d007d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjcnlwdG8lMjBwYXltZW50fGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto payment"
+    },
+    {
+      "id": "crypto-32",
+      "description": "A chess board with crypto pieces, symbolizing strategy.",
+      "imageUrl": "https://images.unsplash.com/photo-1642403711604-3908e90960ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y3J5cHRvJTIwc3RyYXRlZ3l8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crypto strategy"
+    },
+    {
+      "id": "crypto-33",
+      "description": "A graph showing a long, steady upward trend, representing a supercycle.",
+      "imageUrl": "https://images.unsplash.com/photo-1711982268005-21aae644a010?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtYXJrZXQlMjBzdXBlcmN5Y2xlfGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "market supercycle"
+    },
+    {
+      "id": "crypto-34",
+      "description": "The Solana logo with a fast, futuristic background.",
+      "imageUrl": "https://picsum.photos/seed/crypto34/800/500",
+      "imageHint": "Solana fast"
+    },
+    {
+      "id": "crypto-35",
+      "description": "An NFT artwork that appears to be shifting and changing colors.",
+      "imageUrl": "https://images.unsplash.com/photo-1674305281997-b6538532f388?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkeW5hbWljJTIwYXJ0fGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dynamic art"
+    },
+    {
+      "id": "crypto-36",
+      "description": "A screen showing a new crypto listing announcement.",
+      "imageUrl": "https://images.unsplash.com/photo-1626764002377-b1e1be095131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxleGNoYW5nZSUyMGxpc3Rpbmd8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "exchange listing"
+    },
+    {
+      "id": "crypto-37",
+      "description": "A multi-layered diagram showing L1, L2, and L3 blockchains.",
+      "imageUrl": "https://images.unsplash.com/photo-1642356692870-0838c799613e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxibG9ja2NoYWluJTIwbGF5ZXJzfGVufDB8fHx8MTc2MzAzMzY0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blockchain layers"
+    },
+    {
+      "id": "crypto-38",
+      "description": "A person holding a digital ID card on a transparent screen.",
+      "imageUrl": "https://images.unsplash.com/photo-1663789669038-ba180c8c155a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaWdpdGFsJTIwaWRlbnRpdHl8ZW58MHx8fHwxNzYzMDMzNjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital identity"
+    },
+    {
+      "id": "crypto-39",
+      "description": "A star map representing the Cosmos ecosystem with interconnected stars.",
+      "imageUrl": "https://images.unsplash.com/photo-1710676145647-e9f9d9e40d2f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjb3Ntb3MlMjBlY29zeXN0ZW18ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cosmos ecosystem"
+    },
+    {
+      "id": "crypto-40",
+      "description": "An abstract image of hooks and gears integrated into the Uniswap unicorn logo.",
+      "imageUrl": "https://picsum.photos/seed/crypto40/800/500",
+      "imageHint": "DeFi mechanics"
+    },
+    {
+      "id": "crypto-41",
+      "description": "A digital concert ticket on a phone screen with a QR code.",
+      "imageUrl": "https://images.unsplash.com/photo-1571878285530-16e94edb7255?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxORlQlMjB0aWNrZXR8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "NFT ticket"
+    },
+    {
+      "id": "crypto-42",
+      "description": "A portrait of a thoughtful artist in a digital studio environment.",
+      "imageUrl": "https://images.unsplash.com/photo-1622960668894-75d014c9bf83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkaWdpdGFsJTIwYXJ0aXN0fGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital artist"
+    },
+    {
+      "id": "crypto-43",
+      "description": "A chart showing upward growth with a gaming controller icon.",
+      "imageUrl": "https://images.unsplash.com/photo-1494887205043-c5f291293cf6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBpbnZlc3RtZW50fGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gaming investment"
+    },
+    {
+      "id": "crypto-44",
+      "description": "The Chainlink logo acting as a bridge between a blockchain and the real world.",
+      "imageUrl": "https://images.unsplash.com/photo-1667808932812-b83d9171a1f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxibG9ja2NoYWluJTIwb3JhY2xlfGVufDB8fHx8MTc2MzAzNjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blockchain oracle"
+    },
+    {
+      "id": "crypto-45",
+      "description": "A brain with two halves, one calm and one chaotic, representing trading emotions.",
+      "imageUrl": "https://images.unsplash.com/photo-1737690974141-c964afbdf986?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx0cmFkaW5nJTIwcHN5Y2hvbG9neXxlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "trading psychology"
+    },
+    {
+      "id": "crypto-46",
+      "description": "A comparison table showing logos of different NFT marketplaces.",
+      "imageUrl": "https://images.unsplash.com/photo-1663162498681-67f2280ddb9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxORlQlMjBtYXJrZXRwbGFjZXN8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "NFT marketplaces"
+    },
+    {
+      "id": "crypto-47",
+      "description": "A distributed network of storage servers across a globe.",
+      "imageUrl": "https://images.unsplash.com/photo-1551252868-f0142e31ec6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZWNlbnRyYWxpemVkJTIwc3RvcmFnZXxlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "decentralized storage"
+    },
+    {
+      "id": "crypto-48",
+      "description": "An on-chain trading interface for perpetual futures.",
+      "imageUrl": "https://images.unsplash.com/photo-1704541253392-cc9ae53ddd94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxvbi1jaGFpbiUyMHRyYWRpbmd8ZW58MHx8fHwxNzYzMDM2MjU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "on-chain trading"
+    },
+    {
+      "id": "crypto-49",
+      "description": "An artist receiving direct payments from fans in crypto.",
+      "imageUrl": "https://images.unsplash.com/photo-1678227547316-fb79e35b085d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjcmVhdG9yJTIwZWNvbm9teXxlbnwwfHx8fDE3NjMwMDcwNDN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "creator economy"
+    },
+    {
+      "id": "crypto-50",
+      "description": "A group of gamers with guild logos playing together in a virtual world.",
+      "imageUrl": "https://images.unsplash.com/photo-1667840562046-4b6b946e6fcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBndWlsZHxlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gaming guild"
+    },
+    {
+      "id": "crypto-51",
+      "description": "Logos of Polkadot and Cosmos with a versus symbol between them.",
+      "imageUrl": "https://images.unsplash.com/photo-1617086984457-ab1f4b07a4f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxibG9ja2NoYWluJTIwY29tcGFyaXNvbnxlbnwwfHx8fDE3NjMwMzYyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "blockchain comparison"
+    },
+    {
+      "id": "crypto-52",
+      "description": "A government building with a digital currency symbol, raising privacy questions.",
+      "imageUrl": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkaWdpdGFsJTIwY3VycmVuY3l8ZW58MHx8fHwxNzYyOTIwNjA4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital currency"
     }
   ]
 }
