@@ -22,7 +22,7 @@ export const blogData: BlogPost[] = [
     date: '2024-08-15',
     author: 'Dr. Evelyn Reed',
     featuredImageId: 'crypto-1',
-    category: 'Future Tech',
+    category: 'Blockchain',
     tags: ['AI', 'Blockchain', 'Web3', 'Innovation'],
     excerpt: 'Artificial Intelligence and Blockchain are two of the most transformative technologies of our time. When combined, they have the potential to create systems that are not only secure and transparent, but also intelligent and autonomous.',
     content: [
@@ -55,7 +55,7 @@ export const blogData: BlogPost[] = [
     date: '2024-08-10',
     author: 'Ben Carter',
     featuredImageId: 'crypto-5',
-    category: 'Gaming',
+    category: 'NFT',
     tags: ['Web3', 'Gaming', 'NFTs', 'Metaverse'],
     excerpt: 'Web3 gaming is evolving beyond simple play-to-earn models. The future lies in creating immersive experiences with true digital ownership, player-driven economies, and interoperable assets.',
     content: [
@@ -70,7 +70,7 @@ export const blogData: BlogPost[] = [
     date: '2024-08-05',
     author: 'Olivia White',
     featuredImageId: 'crypto-6',
-    category: 'Technology',
+    category: 'Blockchain',
     tags: ['ZK-Proofs', 'Privacy', 'Scaling', 'Cryptography'],
     excerpt: 'Zero-Knowledge (ZK) proofs are a cryptographic breakthrough that allow one party to prove to another that a statement is true, without revealing any information beyond the validity of the statement itself.',
     content: [
@@ -84,7 +84,7 @@ export const blogData: BlogPost[] = [
     date: '2024-08-01',
     author: 'Dr. Evelyn Reed',
     featuredImageId: 'crypto-7',
-    category: 'Technology',
+    category: 'Blockchain',
     tags: ['Modular', 'Blockchain', 'Layer 2', 'Celestia'],
     excerpt: 'The future of blockchain architecture is modular. Instead of one chain doing everything, specialized layers for execution, settlement, and data availability are creating a more scalable and customizable landscape.',
     content: [
@@ -111,7 +111,7 @@ export const blogData: BlogPost[] = [
     date: '2024-07-25',
     author: 'Ben Carter',
     featuredImageId: 'crypto-10',
-    category: 'Web3',
+    category: 'Crypto',
     tags: ['DeSo', 'Social Media', 'Farcaster', 'Lens'],
     excerpt: 'Tired of centralized platforms controlling your data and content? Decentralized Social (DeSo) networks are emerging as a user-owned alternative, putting you back in control of your digital identity.',
     content: [
@@ -125,7 +125,7 @@ export const blogData: BlogPost[] = [
     date: '2024-07-22',
     author: 'Olivia White',
     featuredImageId: 'crypto-12',
-    category: 'Ethereum',
+    category: 'Crypto',
     tags: ['Account Abstraction', 'UX', 'Wallets', 'ERC-4337'],
     excerpt: 'Seed phrases and complex transaction signing have been major barriers to crypto adoption. Account Abstraction (AA) is set to change that by making crypto wallets as easy to use as regular web accounts.',
     content: [
@@ -138,7 +138,7 @@ export const blogData: BlogPost[] = [
     date: '2024-07-20',
     author: 'Dr. Evelyn Reed',
     featuredImageId: 'crypto-13',
-    category: 'Bitcoin',
+    category: 'NFT',
     tags: ['Bitcoin', 'NFTs', 'Ordinals', 'BRC-20'],
     excerpt: 'For years, NFTs were synonymous with Ethereum. The Ordinals protocol has changed the game, bringing complex digital artifacts directly onto the Bitcoin blockchain.',
     content: [
@@ -156,6 +156,58 @@ export const blogData: BlogPost[] = [
     excerpt: 'Staking your crypto often means locking it up, making it illiquid. Liquid Staking Derivatives (LSDs) solve this by giving you a tokenized version of your staked assets that you can use across DeFi.',
     content: [
       { type: 'paragraph', content: 'When you stake ETH through a protocol like Lido, you receive stETH in return. This stETH is an LSD—it represents your staked ETH and continues to accrue staking rewards, but you can also trade it, lend it, or use it as collateral in other DeFi applications, unlocking capital efficiency.' },
+    ],
+  },
+  {
+    slug: 'understanding-altcoins-beyond-bitcoin',
+    title: 'Understanding Altcoins: A World Beyond Bitcoin',
+    date: '2024-07-15',
+    author: 'Alex Chen',
+    featuredImageId: 'crypto-12',
+    category: 'Altcoin',
+    tags: ['Altcoin', 'Ethereum', 'Solana', 'Cardano'],
+    excerpt: 'While Bitcoin remains the king, a vibrant ecosystem of thousands of "altcoins" offers diverse functionalities and investment opportunities. Lets explore what makes them unique.',
+    content: [
+      { type: 'paragraph', content: 'The term "altcoin" simply refers to any cryptocurrency other than Bitcoin. This includes everything from Ethereum, with its smart contract capabilities, to Solana, known for its high-speed transactions. Each altcoin project aims to improve upon Bitcoin or offer entirely new features.' },
+    ],
+  },
+  {
+    slug: 'mastering-the-art-of-crypto-trading',
+    title: 'Mastering the Art of Crypto Trading: A Beginner\'s Guide',
+    date: '2024-07-12',
+    author: 'Sarah Jenkins',
+    featuredImageId: 'crypto-7',
+    category: 'Trading',
+    tags: ['Trading', 'Investing', 'Charts', 'Analysis'],
+    excerpt: 'Crypto trading can be both exciting and daunting. This guide will walk you through the fundamental concepts, from reading charts to developing a trading strategy.',
+    content: [
+      { type: 'paragraph', content: 'Successful trading isn\'t about luck; it\'s about strategy and analysis. We will cover the basics of technical analysis (TA), fundamental analysis (FA), and risk management to help you navigate the volatile cryptocurrency markets with more confidence.' },
+    ],
+  },
+  {
+    slug: 'crypto-explorer-launches-new-platform',
+    title: 'CryptoVerse Explorer Announces Launch of New Educational Platform',
+    date: '2024-07-10',
+    author: 'CryptoVerse Staff',
+    featuredImageId: 'crypto-1',
+    category: 'Press Release',
+    tags: ['Announcement', 'Platform', 'Education'],
+    excerpt: 'Today, CryptoVerse Explorer is proud to announce the launch of our new, interactive platform designed to make learning about cryptocurrency accessible to everyone.',
+    content: [
+      { type: 'paragraph', content: 'Our mission has always been to demystify the world of digital assets. This new platform integrates cutting-edge learning tools, expert analysis, and a vibrant community to guide users from their first steps in crypto to advanced investment strategies. We believe education is the key to safe and effective participation in the crypto economy.' },
+    ],
+  },
+  {
+    slug: 'featured-interview-with-a-defi-pioneer',
+    title: 'Featured: An Interview with DeFi Pioneer Dr. Evelyn Reed',
+    date: '2024-07-08',
+    author: 'Ben Carter',
+    featuredImageId: 'crypto-15',
+    category: 'Featured',
+    tags: ['Interview', 'DeFi', 'Innovation', 'Featured'],
+    excerpt: 'We sit down with Dr. Evelyn Reed, a leading voice in decentralized finance, to discuss the future of DeFi, the challenges of scalability, and her vision for a truly open financial system.',
+    content: [
+      { type: 'paragraph', content: 'Dr. Reed shares her insights on the importance of interoperability, the role of regulation, and what she believes is the "next big thing" in the DeFi space. A must-read for anyone interested in the future of finance.' },
     ],
   },
 ];

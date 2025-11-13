@@ -20,9 +20,15 @@ export function Header() {
   const navLinks = (
     <>
       <NavLink href="/">Home</NavLink>
+      <NavLink href="/category/crypto">Crypto</NavLink>
+      <NavLink href="/category/trading">Trading</NavLink>
+      <NavLink href="/category/altcoin">Altcoin</NavLink>
+      <NavLink href="/category/blockchain">Blockchain</NavLink>
+      <NavLink href="/category/defi">DeFi</NavLink>
+      <NavLink href="/category/nft">NFT</NavLink>
+      <NavLink href="/category/featured">Featured</NavLink>
+      <NavLink href="/category/press-release">Press Release</NavLink>
       <NavLink href="/?page=1">Blog</NavLink>
-      <NavLink href="/about">About</NavLink>
-      <NavLink href="/contact">Contact</NavLink>
     </>
   );
 
@@ -34,7 +40,7 @@ export function Header() {
             CryptoVerse Explorer
           </Link>
           
-          <nav className="hidden md:flex items-center space-x-2">
+          <nav className="hidden md:flex items-center space-x-1">
             {navLinks}
             <Button variant="outline" asChild>
                <Link href="#" target="_blank" rel="noopener noreferrer">

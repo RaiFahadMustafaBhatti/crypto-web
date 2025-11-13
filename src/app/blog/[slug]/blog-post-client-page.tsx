@@ -50,7 +50,9 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
     <article>
       <div className="max-w-4xl mx-auto">
         <header className="mb-8">
-          <Badge variant="secondary" className="mb-4 uppercase tracking-wider text-sm font-semibold">{post.category}</Badge>
+          <Link href={`/category/${post.category.toLowerCase().replace(/\s+/g, '-')}`} target="_blank" rel="noopener noreferrer">
+            <Badge variant="secondary" className="mb-4 uppercase tracking-wider text-sm font-semibold">{post.category}</Badge>
+          </Link>
           <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">{post.title}</h1>
           <div className="text-muted-foreground">
             <span>By {post.author}</span> &middot; <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>

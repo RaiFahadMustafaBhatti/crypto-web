@@ -40,9 +40,11 @@ export function BlogCard({ post, className }: BlogCardProps) {
       </Link>
       <CardContent className="p-6 flex-grow flex flex-col">
         <div className="flex-grow">
-          <Badge variant="secondary" className="mb-2 uppercase tracking-wider text-xs font-semibold">
-            {post.category}
-          </Badge>
+          <Link href={`/category/${post.category.toLowerCase().replace(/\s+/g, '-')}`} target="_blank" rel="noopener noreferrer">
+            <Badge variant="secondary" className="mb-2 uppercase tracking-wider text-xs font-semibold">
+              {post.category}
+            </Badge>
+          </Link>
           <Link
             href={`/blog/${post.slug}`}
             className="block"
