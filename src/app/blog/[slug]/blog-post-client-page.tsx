@@ -6,7 +6,7 @@ import { type BlogPost, type BlogContent } from '@/lib/blog-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Badge } from '@/components/ui/badge';
 import { BlogCard } from '@/components/blog-card';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ScrollFadeIn } from '@/components/scroll-fade-in';
 
@@ -45,6 +45,11 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
 
 export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, relatedPosts: BlogPost[] }) {
   const featuredImage = PlaceHolderImages.find(img => img.id === post.featuredImageId);
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+  }, [post.date]);
   
   return (
     <article>
@@ -55,7 +60,7 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
           </Link>
           <h1 className="font-headline text-4xl md:text-5xl font-bold text-primary mb-4">{post.title}</h1>
           <div className="text-muted-foreground">
-            <span>By {post.author}</span> &middot; <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            <span>By {post.author}</span> &middot; <span>{formattedDate}</span>
           </div>
         </header>
 

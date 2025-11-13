@@ -1,3 +1,5 @@
+
+'use client';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
@@ -5,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import type { BlogPost } from '@/lib/blog-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ScrollFadeIn } from './scroll-fade-in';
+import { useState, useEffect } from 'react';
 
 type BlogCardProps = {
   post: BlogPost;
@@ -13,6 +16,12 @@ type BlogCardProps = {
 
 export function BlogCard({ post, className }: BlogCardProps) {
   const image = PlaceHolderImages.find((img) => img.id === post.featuredImageId);
+  const [formattedDate, setFormattedDate] = useState('');
+
+  useEffect(() => {
+    setFormattedDate(new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+  }, [post.date]);
+
 
   return (
     <Card className={`overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}>
@@ -62,7 +71,7 @@ export function BlogCard({ post, className }: BlogCardProps) {
         </div>
         <div className="text-xs text-muted-foreground mt-4 pt-4 border-t">
           <span>
-            By {post.author} on {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            By {post.author} on {formattedDate}
           </span>
         </div>
       </CardContent>
