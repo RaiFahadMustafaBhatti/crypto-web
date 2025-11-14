@@ -16,6 +16,53 @@ import { Card, CardContent } from './ui/card';
 import { cn } from '@/lib/utils';
 import { type CarouselApi } from '@/components/ui/carousel';
 
+const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
+  const numPosts = posts.length;
+
+  if (numPosts === 1) {
+    return (
+      <div className="w-full">
+        <BlogCard post={posts[0]} isFeatured={true} className="min-h-[400px]" />
+      </div>
+    );
+  }
+
+  if (numPosts === 2) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+        <BlogCard post={posts[0]} className="h-full" />
+        <BlogCard post={posts[1]} className="h-full" />
+      </div>
+    );
+  }
+
+  if (numPosts === 3) {
+    return (
+      <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-[400px] md:h-auto">
+        <div className="col-span-2 row-span-1 md:col-span-1 md:row-span-2">
+            <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
+        </div>
+        <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
+            <BlogCard post={posts[1]} className="h-full" />
+        </div>
+        <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
+            <BlogCard post={posts[2]} className="h-full" />
+        </div>
+      </div>
+    );
+  }
+
+  // Default to 4 posts in a 2x2 grid
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+      {posts.map((post) => (
+        <BlogCard key={post.slug} post={post} className="h-full" />
+      ))}
+    </div>
+  );
+};
+
+
 export function CategoriesSection() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -70,11 +117,7 @@ export function CategoriesSection() {
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center p-6">
                     <h3 className="text-2xl font-semibold mb-4">{category}</h3>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
-                      {posts.slice(0, 4).map((post) => (
-                        <BlogCard key={post.slug} post={post} />
-                      ))}
-                    </div>
+                    <CategoryGrid posts={posts.slice(0, 4)} />
                   </CardContent>
                 </Card>
               </div>
