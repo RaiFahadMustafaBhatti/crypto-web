@@ -101,10 +101,7 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
           </div>
         </Link>
       </div>
-       <CardContent className="p-4 flex-grow flex flex-col">
-        <p className="text-muted-foreground text-sm line-clamp-3 flex-grow">
-            {post.excerpt}
-        </p>
+       <CardContent className="p-4 flex-grow flex flex-col justify-end">
          <div className="text-xs text-muted-foreground mt-3 pt-3 border-t">
           <Link href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className='hover:text-primary'>Read More &rarr;</Link>
         </div>
