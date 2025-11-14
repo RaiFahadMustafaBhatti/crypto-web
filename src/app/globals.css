@@ -75,14 +75,14 @@
 
 @layer components {
     .main-nav {
-        @apply bg-blue-100;
+        @apply bg-transparent;
     }
     .main-nav-link {
-        @apply bg-transparent;
+        @apply bg-transparent px-3 h-9;
     }
 
     .dark .main-nav {
-        @apply bg-blue-900/20;
+        @apply bg-transparent;
     }
     .dark .main-nav-link {
         @apply bg-transparent;

@@ -66,33 +66,29 @@ export function Header() {
     <header className="bg-card border-b shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Desktop Header */}
-        <div className="hidden md:flex flex-col">
-            {/* First Row */}
-            <div className="flex items-center justify-center h-16">
-                 <Link href="/" className="flex items-center gap-2 text-3xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
-                    CryptoVerse Explorer
-                </Link>
-            </div>
-             {/* Second Row */}
-            <div className="flex items-center justify-between h-14 main-nav">
-                 <nav className="flex items-center space-x-1">
-                    {mainNavLinks}
-                 </nav>
-                 <div className="flex items-center gap-2">
-                    <SearchBar />
-                    <Button variant="outline" size="sm" asChild>
-                       <Link href="/login">
-                        <LogIn className="mr-2 h-4 w-4" />
-                        Login
-                       </Link>
-                    </Button>
-                    <Button variant="default" size="sm" asChild>
-                        <Link href="/register">
-                            <UserPlus className="mr-2 h-4 w-4" />
-                            Register
-                        </Link>
-                    </Button>
-                </div>
+        <div className="hidden md:flex h-16 items-center">
+             <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary hover:opacity-80 transition-opacity mr-6">
+                CryptoVerse Explorer
+            </Link>
+             
+            <nav className="flex items-center space-x-1 main-nav flex-nowrap overflow-x-auto">
+                {mainNavLinks}
+            </nav>
+
+             <div className="flex items-center gap-2 ml-auto">
+                <SearchBar />
+                <Button variant="outline" size="sm" asChild>
+                   <Link href="/login">
+                    <LogIn className="mr-2 h-4 w-4" />
+                    Login
+                   </Link>
+                </Button>
+                <Button variant="default" size="sm" asChild>
+                    <Link href="/register">
+                        <UserPlus className="mr-2 h-4 w-4" />
+                        Register
+                    </Link>
+                </Button>
             </div>
         </div>
 
