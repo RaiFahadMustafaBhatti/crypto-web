@@ -1,3 +1,4 @@
+
 'use client';
 
 import * as React from 'react';
@@ -69,7 +70,7 @@ export function CategoriesSection() {
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center p-6">
                     <h3 className="text-2xl font-semibold mb-4">{category}</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
                       {posts.slice(0, 4).map((post) => (
                         <BlogCard key={post.slug} post={post} />
                       ))}
