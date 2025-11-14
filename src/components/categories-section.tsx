@@ -1,18 +1,21 @@
 'use client';
 
 import * as React from 'react';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { blogData, type BlogPost } from '@/lib/blog-data';
 import { BlogCard } from './blog-card';
 import { Card, CardContent } from './ui/card';
 
 export function CategoriesSection() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
+  );
+
   const categories = React.useMemo(() => {
     const categoryMap = new Map<string, BlogPost[]>();
     blogData.forEach((post) => {
@@ -32,7 +35,9 @@ export function CategoriesSection() {
       <Carousel
         opts={{
           align: 'start',
+          loop: true,
         }}
+        plugins={[plugin.current]}
         className="w-full"
       >
         <CarouselContent>
@@ -53,8 +58,6 @@ export function CategoriesSection() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </section>
   );

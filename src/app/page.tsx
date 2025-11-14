@@ -16,6 +16,8 @@ const POSTS_TO_SHOW = 12;
 
 export default function Home() {
   const postsToShow = blogData.slice(0, POSTS_TO_SHOW);
+  const mostViewedPosts = blogData.slice(4, 8);
+
 
   return (
     <div className="space-y-12">
@@ -47,6 +49,21 @@ export default function Home() {
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+      </section>
+
+       <section className="w-full">
+        <h2 className="text-3xl font-bold text-center mb-8">
+            Most Viewed
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {mostViewedPosts.map((post) => (
+                <BlogCard 
+                    key={post.slug}
+                    post={post}
+                    className="h-full"
+                />
+            ))}
+        </div>
       </section>
 
       <Separator className="my-12" />

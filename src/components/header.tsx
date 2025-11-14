@@ -17,11 +17,6 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
   </Button>
 );
 
-const SecondaryLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <Link href={href} className="text-xs text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
-        {children}
-    </Link>
-);
 
 const SearchBar = () => {
     const router = useRouter();
@@ -65,17 +60,6 @@ export function Header() {
     </>
   );
 
-  const secondaryNavLinks = (
-      <div className="flex items-center gap-4">
-        <SecondaryLink href="/about">About Us</SecondaryLink>
-        <SecondaryLink href="/contact">Contact Us</SecondaryLink>
-        <SecondaryLink href="/advertise">Advertise with us</SecondaryLink>
-        <SecondaryLink href="/privacy">Privacy Policy</SecondaryLink>
-        <SecondaryLink href="/disclaimer">Disclaimer</SecondaryLink>
-        <SecondaryLink href="/terms">Terms and Conditions</SecondaryLink>
-      </div>
-  )
-
   return (
     <header className="bg-card border-b shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -102,10 +86,6 @@ export function Header() {
                     </Button>
                 </div>
             </div>
-             {/* Third Row */}
-             <div className="flex items-center justify-end h-10 border-t">
-                {secondaryNavLinks}
-             </div>
         </div>
 
         {/* Mobile Header */}
@@ -140,16 +120,6 @@ export function Header() {
                        </Link>
                     </Button>
                   </nav>
-                  <div className="px-4 py-4 border-t">
-                    <div className="flex flex-col items-start gap-3">
-                        <SecondaryLink href="/about">About Us</SecondaryLink>
-                        <SecondaryLink href="/contact">Contact Us</SecondaryLink>
-                        <SecondaryLink href="/advertise">Advertise with us</SecondaryLink>
-                        <SecondaryLink href="/privacy">Privacy Policy</SecondaryLink>
-                        <SecondaryLink href="/disclaimer">Disclaimer</SecondaryLink>
-                        <SecondaryLink href="/terms">Terms and Conditions</SecondaryLink>
-                    </div>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>
