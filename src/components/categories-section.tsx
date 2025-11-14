@@ -21,15 +21,15 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   if (numPosts === 1) {
     return (
-      <div className="w-full h-[400px] sm:h-auto">
-        <BlogCard post={posts[0]} isFeatured={true} className="min-h-[400px]" />
+      <div className="w-full h-full min-h-[400px]">
+        <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
       </div>
     );
   }
 
   if (numPosts === 2) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-[400px] sm:h-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-full min-h-[400px]">
         <BlogCard post={posts[0]} className="h-full" />
         <BlogCard post={posts[1]} className="h-full" />
       </div>
@@ -38,7 +38,7 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   if (numPosts === 3) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-[400px] md:h-[400px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-full min-h-[400px] md:min-h-[500px]">
             <div className="md:col-span-1">
                 <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
             </div>
@@ -60,7 +60,7 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   // Default to 4 posts in a 2x2 grid
   return (
-    <div className="grid grid-cols-2 gap-4 w-full">
+    <div className="grid grid-cols-2 gap-4 w-full h-full min-h-[400px] md:h-auto md:aspect-[2/1]">
       {posts.map((post) => (
         <BlogCard key={post.slug} post={post} className="h-full" />
       ))}
@@ -119,9 +119,9 @@ export function CategoriesSection() {
         <CarouselContent>
           {categories.map(([category, posts]) => (
             <CarouselItem key={category}>
-              <div className="p-1">
-                <Card>
-                  <CardContent className="flex flex-col items-center justify-center p-6">
+              <div className="p-1 h-full">
+                <Card className="h-full">
+                  <CardContent className="flex flex-col items-center justify-center p-6 h-full">
                     <h3 className="text-2xl font-semibold mb-4">{category}</h3>
                     <CategoryGrid posts={posts.slice(0, 4)} />
                   </CardContent>
