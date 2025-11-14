@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { useRouter } from 'next/navigation';
 
+
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild className="main-nav-link">
     <Link href={href} target="_blank" rel="noopener noreferrer">
@@ -60,7 +61,7 @@ export function Header() {
       <NavLink href="/category/nft">NFT</NavLink>
       <NavLink href="/category/featured">Featured</NavLink>
       <NavLink href="/category/press-release">Press Release</NavLink>
-      <NavLink href="/?page=1">Blog</NavLink>
+      <NavLink href="/blog">Blog</NavLink>
     </>
   );
 
