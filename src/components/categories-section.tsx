@@ -42,19 +42,14 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
             <div className="md:col-span-1">
                 <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
             </div>
-            <div className="hidden md:flex md:col-span-1 md:flex-col gap-4">
+             <div className="hidden md:flex md:col-span-1 md:flex-col gap-4">
                 <BlogCard post={posts[1]} className="flex-1" />
                 <BlogCard post={posts[2]} className="flex-1" />
             </div>
              {/* Mobile view for 3 posts */}
-            <div className="md:hidden">
-                <div className="mb-4">
-                    <BlogCard post={posts[0]} isFeatured={true} className="h-full min-h-[200px]" />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                    <BlogCard post={posts[1]} className="h-full" />
-                    <BlogCard post={posts[2]} className="h-full" />
-                </div>
+            <div className="md:hidden grid grid-cols-2 gap-4">
+                 <BlogCard post={posts[1]} className="h-full" />
+                 <BlogCard post={posts[2]} className="h-full" />
             </div>
         </div>
     );
@@ -62,7 +57,7 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   // Default to 4 posts in a 2x2 grid
   return (
-    <div className="grid grid-cols-2 gap-4 w-full h-full min-h-[400px] md:aspect-[2/1]">
+    <div className="grid grid-cols-2 gap-4 w-full h-full min-h-[400px] md:aspect-w-2 md:aspect-h-1">
       {posts.map((post) => (
         <BlogCard key={post.slug} post={post} className="h-full" />
       ))}
