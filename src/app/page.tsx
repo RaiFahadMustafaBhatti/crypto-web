@@ -22,7 +22,7 @@ export default function Home() {
 
       <Separator className="my-12" />
 
-      <section className="py-8 md:py-12">
+      <section>
         <div className="max-w-2xl mx-auto">
           <NewsletterSignup />
         </div>
