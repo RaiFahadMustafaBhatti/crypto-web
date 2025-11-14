@@ -15,33 +15,42 @@ import {
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
-import { Mail, KeyRound, UserPlus } from 'lucide-react';
+import { Mail, KeyRound, User, LogIn } from 'lucide-react';
 import Link from 'next/link';
 
 const formSchema = z.object({
+  name: z.string().min(2, {
+    message: 'Name must be at least 2 characters.',
+  }),
   email: z.string().email({
     message: 'Please enter a valid email address.',
   }),
   password: z.string().min(8, {
     message: 'Password must be at least 8 characters.',
   }),
+  confirmPassword: z.string()
+}).refine(data => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
 });
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: '',
       email: '',
       password: '',
+      confirmPassword: '',
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
     toast({
-      title: 'Login Successful!',
-      description: 'Welcome back to CryptoVerse Explorer.',
+      title: 'Registration Successful!',
+      description: 'Welcome to CryptoVerse Explorer. You can now log in.',
     });
     form.reset();
   }
@@ -50,12 +59,28 @@ export default function LoginPage() {
     <div className="flex justify-center items-center py-12">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <CardTitle>Login</CardTitle>
-          <CardDescription>Access your CryptoVerse Explorer account.</CardDescription>
+          <CardTitle>Create an Account</CardTitle>
+          <CardDescription>Join CryptoVerse Explorer today.</CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+               <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Name</FormLabel>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} className="pl-10" />
+                      </FormControl>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="email"
@@ -88,20 +113,36 @@ export default function LoginPage() {
                   </FormItem>
                 )}
               />
+              <FormField
+                control={form.control}
+                name="confirmPassword"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Confirm Password</FormLabel>
+                    <div className="relative">
+                      <KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                      <FormControl>
+                        <Input type="password" placeholder="********" {...field} className="pl-10" />
+                      </FormControl>
+                    </div>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <Button type="submit" className="w-full">
-                Login
+                Register
               </Button>
             </form>
           </Form>
         </CardContent>
-        <CardFooter className="flex flex-col gap-4">
+         <CardFooter className="flex flex-col gap-4">
             <div className="text-center text-sm text-muted-foreground">
-                Don't have an account?
+                Already have an account?
             </div>
             <Button variant="outline" asChild className="w-full">
-                <Link href="/register">
-                    <UserPlus className="mr-2 h-4 w-4" />
-                    Register
+                <Link href="/login">
+                    <LogIn className="mr-2 h-4 w-4" />
+                    Login
                 </Link>
             </Button>
         </CardFooter>

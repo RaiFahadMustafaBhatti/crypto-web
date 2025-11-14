@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { Menu, LogIn, Search } from 'lucide-react';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, LogIn, Search, UserPlus } from 'lucide-react';
 import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { useRouter } from 'next/navigation';
@@ -80,11 +80,17 @@ export function Header() {
                  </nav>
                  <div className="flex items-center gap-2">
                     <SearchBar />
-                    <Button variant="outline" asChild>
+                    <Button variant="outline" size="sm" asChild>
                        <Link href="/login">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
                        </Link>
+                    </Button>
+                    <Button variant="default" size="sm" asChild>
+                        <Link href="/register">
+                            <UserPlus className="mr-2 h-4 w-4" />
+                            Register
+                        </Link>
                     </Button>
                 </div>
             </div>
@@ -110,11 +116,17 @@ export function Header() {
                   <nav className="flex flex-col space-y-1 p-4 flex-grow" onClick={() => setMobileMenuOpen(false)}>
                     {mainNavLinks}
                   </nav>
-                   <div className="p-4 border-t">
+                   <div className="p-4 border-t grid grid-cols-2 gap-2">
                      <Button variant="outline" asChild className="w-full">
                        <Link href="/login">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
+                       </Link>
+                    </Button>
+                    <Button variant="default" asChild className="w-full">
+                       <Link href="/register">
+                        <UserPlus className="mr-2 h-4 w-4" />
+                        Register
                        </Link>
                     </Button>
                    </div>
@@ -135,7 +147,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] sm:w-[320px]">
                  <SheetHeader>
-                    <SheetTitle>Search</SheetTitle>
+                    <SheetTitle>Search our articles</SheetTitle>
                  </SheetHeader>
                  <div className="mt-4">
                     <SearchBar onSearch={() => setSearchSheetOpen(false)}/>
