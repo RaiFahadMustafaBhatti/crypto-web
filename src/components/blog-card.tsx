@@ -44,7 +44,7 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
               priority
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6 w-full">
              <Badge variant="secondary" className="mb-2 uppercase tracking-wider text-xs font-semibold">
                 {post.category}
@@ -83,7 +83,7 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
                 data-ai-hint={image.imageHint}
               />
           )}
-           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent" />
            <div className="absolute top-2 left-2">
              <Badge variant="secondary" className="uppercase tracking-wider text-xs font-semibold">
               {post.category}
@@ -101,8 +101,9 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
           </div>
         </Link>
       </div>
-       <CardContent className="p-4 flex-grow flex flex-col justify-end">
-         <div className="text-xs text-muted-foreground mt-3 pt-3 border-t">
+       <CardContent className="p-4 flex-grow flex flex-col">
+          <p className="text-sm text-muted-foreground flex-grow line-clamp-3">{post.excerpt}</p>
+         <div className="text-sm text-muted-foreground mt-4 pt-3 border-t font-semibold">
           <Link href={`/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className='hover:text-primary'>Read More &rarr;</Link>
         </div>
       </CardContent>
