@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useRouter } from 'next/navigation';
@@ -8,7 +9,6 @@ import { Badge } from '@/components/ui/badge';
 import { BlogCard } from '@/components/blog-card';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ScrollFadeIn } from '@/components/scroll-fade-in';
 
 function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
   const { type, content } = contentItem;
@@ -24,16 +24,14 @@ function ContentRenderer({ contentItem }: { contentItem: BlogContent }) {
       return (
         <figure className="my-8">
           <Link href="/" target="_blank" rel="noopener noreferrer" className="block group cursor-pointer">
-            <ScrollFadeIn>
-              <Image
-                src={image.imageUrl}
-                alt={image.description}
-                width={800}
-                height={500}
-                className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                data-ai-hint={image.imageHint}
-              />
-            </ScrollFadeIn>
+            <Image
+              src={image.imageUrl}
+              alt={image.description}
+              width={800}
+              height={500}
+              className="rounded-lg shadow-lg mx-auto w-full max-w-4xl object-cover"
+              data-ai-hint={image.imageHint}
+            />
           </Link>
           <figcaption className="text-center text-sm text-muted-foreground mt-3">{image.description}</figcaption>
         </figure>
@@ -67,17 +65,15 @@ export function BlogPostClientPage({ post, relatedPosts }: { post: BlogPost, rel
         {featuredImage && (
           <div className="mb-8">
              <Link href="/" target="_blank" rel="noopener noreferrer" className="block group cursor-pointer">
-              <ScrollFadeIn>
                 <Image
                   src={featuredImage.imageUrl}
                   alt={post.title}
                   width={1200}
                   height={600}
-                  className="rounded-xl shadow-lg w-full object-cover aspect-video transition-transform duration-500 ease-in-out group-hover:scale-105"
+                  className="rounded-xl shadow-lg w-full object-cover aspect-video"
                   priority
                   data-ai-hint={featuredImage.imageHint}
                 />
-              </ScrollFadeIn>
             </Link>
           </div>
         )}

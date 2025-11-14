@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ScrollFadeIn } from '@/components/scroll-fade-in';
 
 export default function AboutPage() {
     const teamImage = PlaceHolderImages.find(img => img.id === 'crypto-14');
@@ -18,15 +17,13 @@ export default function AboutPage() {
 
             {teamImage && (
                 <section>
-                    <ScrollFadeIn>
-                        <Image
-                            src={teamImage.imageUrl}
-                            alt="Our Team"
-                            width={1200}
-                            height={600}
-                            className="rounded-xl shadow-lg w-full object-cover aspect-video"
-                            data-ai-hint={teamImage.imageHint} />
-                    </ScrollFadeIn>
+                    <Image
+                        src={teamImage.imageUrl}
+                        alt="Our Team"
+                        width={1200}
+                        height={600}
+                        className="rounded-xl shadow-lg w-full object-cover aspect-video"
+                        data-ai-hint={teamImage.imageHint} />
                 </section>
             )}
 

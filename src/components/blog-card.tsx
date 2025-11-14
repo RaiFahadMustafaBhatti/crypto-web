@@ -6,7 +6,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import type { BlogPost } from '@/lib/blog-data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ScrollFadeIn } from './scroll-fade-in';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -40,7 +39,7 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
               src={image.imageUrl}
               alt={post.title}
               fill
-              className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+              className="object-cover"
               data-ai-hint={image.imageHint}
               priority
             />
@@ -76,15 +75,13 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
           rel="noopener noreferrer"
         >
           {image && (
-            <ScrollFadeIn>
               <Image
                 src={image.imageUrl}
                 alt={post.title}
                 fill
-                className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                className="object-cover"
                 data-ai-hint={image.imageHint}
               />
-            </ScrollFadeIn>
           )}
            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
            <div className="absolute top-2 left-2">
