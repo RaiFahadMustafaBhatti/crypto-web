@@ -28,7 +28,7 @@ export function CategoriesSection() {
   }, []);
 
   return (
-    <section className="w-full py-12">
+    <section className="w-full">
       <h2 className="text-3xl font-bold text-center mb-8">
         Explore by Category
       </h2>
