@@ -2,7 +2,6 @@ import { blogData, type BlogPost } from '@/lib/blog-data';
 import { notFound } from 'next/navigation';
 import { BlogCard } from '@/components/blog-card';
 import { PaginationControls } from '@/components/pagination-controls';
-import { AdPlaceholder } from '@/components/ad-placeholder';
 import {unslugify} from '@/lib/utils';
 import type { Metadata } from 'next'
 
