@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { Menu, LogIn, Search } from 'lucide-react';
 import React, { useState } from 'react';
 import { Input } from './ui/input';
@@ -18,7 +18,7 @@ const NavLink = ({ href, children }: { href: string, children: React.ReactNode }
 );
 
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }: { onSearch?: () => void }) => {
     const router = useRouter();
     const [query, setQuery] = useState('');
 
@@ -26,6 +26,7 @@ const SearchBar = () => {
         e.preventDefault();
         if (query.trim()) {
             router.push(`/search?q=${encodeURIComponent(query.trim())}`);
+            if(onSearch) onSearch();
         }
     };
     
@@ -43,7 +44,8 @@ const SearchBar = () => {
 };
 
 export function Header() {
-  const [open, setOpen] = React.useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [searchSheetOpen, setSearchSheetOpen] = React.useState(false);
 
   const mainNavLinks = (
     <>
@@ -90,37 +92,53 @@ export function Header() {
 
         {/* Mobile Header */}
         <div className="md:hidden flex items-center justify-between h-16">
-           <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
-                CryptoVerse Explorer
-            </Link>
-            <Sheet open={open} onOpenChange={setOpen}>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] sm:w-[320px] p-0">
-                <SheetHeader className="p-4 border-b">
-                   <SheetTitle className="sr-only">Main Menu</SheetTitle>
-                   <Link href="/" className="flex items-center gap-2 text-2xl font-headline font-bold text-primary">
+              <SheetContent side="left" className="w-[280px] sm:w-[320px] p-0">
+                 <SheetHeader className="p-4 border-b">
+                   <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-xl font-headline font-bold text-primary">
                     CryptoVerse Explorer
                   </Link>
                 </SheetHeader>
-                <div className="flex flex-col space-y-4 py-6 h-full">
-                   <div className="px-4">
-                        <SearchBar />
-                   </div>
-                  <nav className="flex flex-col space-y-2 px-4 flex-grow" onClick={() => setOpen(false)}>
+                <div className="flex flex-col h-full">
+                  <nav className="flex flex-col space-y-1 p-4 flex-grow" onClick={() => setMobileMenuOpen(false)}>
                     {mainNavLinks}
-                     <Button variant="outline" asChild>
+                  </nav>
+                   <div className="p-4 border-t">
+                     <Button variant="outline" asChild className="w-full">
                        <Link href="/login">
                         <LogIn className="mr-2 h-4 w-4" />
                         Login
                        </Link>
                     </Button>
-                  </nav>
+                   </div>
                 </div>
+              </SheetContent>
+            </Sheet>
+
+            <Link href="/" className="flex items-center gap-2 text-xl font-headline font-bold text-primary hover:opacity-80 transition-opacity">
+                CryptoVerse Explorer
+            </Link>
+
+            <Sheet open={searchSheetOpen} onOpenChange={setSearchSheetOpen}>
+              <SheetTrigger asChild>
+                 <Button variant="ghost" size="icon">
+                    <Search />
+                    <span className="sr-only">Open search</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                 <SheetHeader>
+                    <SheetTitle>Search</SheetTitle>
+                 </SheetHeader>
+                 <div className="mt-4">
+                    <SearchBar onSearch={() => setSearchSheetOpen(false)}/>
+                 </div>
               </SheetContent>
             </Sheet>
           </div>
