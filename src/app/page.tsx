@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import { NewsletterSignup } from '@/components/newsletter-signup';
 import { Separator } from '@/components/ui/separator';
 import React from 'react';
+import { CategoriesSection } from '@/components/categories-section';
 
 const POSTS_PER_PAGE = 6;
 
@@ -40,6 +41,8 @@ export default function Home({
           </Link>
         </Button>
       </section>
+
+      <CategoriesSection />
 
       <section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
