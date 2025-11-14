@@ -44,7 +44,7 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
               priority
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
           <div className="absolute bottom-0 left-0 p-6 w-full">
              <Badge variant="secondary" className="mb-2 uppercase tracking-wider text-xs font-semibold">
                 {post.category}
@@ -83,14 +83,14 @@ export function BlogCard({ post, className, isFeatured = false }: BlogCardProps)
                 data-ai-hint={image.imageHint}
               />
           )}
-           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
            <div className="absolute top-2 left-2">
              <Badge variant="secondary" className="uppercase tracking-wider text-xs font-semibold">
               {post.category}
             </Badge>
            </div>
            <div className="absolute bottom-0 left-0 p-4 w-full">
-              <h3 className="font-headline text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-3">
+              <h3 className="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-3">
                 {post.title}
               </h3>
               <div className="text-xs text-white/80 mt-2">
