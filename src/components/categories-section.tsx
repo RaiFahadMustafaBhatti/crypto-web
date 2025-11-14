@@ -6,12 +6,20 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel';
 import { blogData, type BlogPost } from '@/lib/blog-data';
 import { BlogCard } from './blog-card';
 import { Card, CardContent } from './ui/card';
+import { cn } from '@/lib/utils';
+import { type CarouselApi } from '@/components/ui/carousel';
 
 export function CategoriesSection() {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+
   const plugin = React.useRef(
     Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
@@ -27,12 +35,26 @@ export function CategoriesSection() {
     return Array.from(categoryMap.entries());
   }, []);
 
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
   return (
     <section className="w-full">
       <h2 className="text-3xl font-bold text-center mb-8">
         Explore by Category
       </h2>
       <Carousel
+        setApi={setApi}
         opts={{
           align: 'start',
           loop: true,
@@ -42,7 +64,7 @@ export function CategoriesSection() {
       >
         <CarouselContent>
           {categories.map(([category, posts]) => (
-            <CarouselItem key={category} className="md:basis-1/1 lg:basis-1/1">
+            <CarouselItem key={category}>
               <div className="p-1">
                 <Card>
                   <CardContent className="flex flex-col items-center justify-center p-6">
@@ -58,7 +80,22 @@ export function CategoriesSection() {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <CarouselPrevious className="hidden md:flex" />
+        <CarouselNext className="hidden md:flex" />
       </Carousel>
+      <div className="md:hidden flex justify-center items-center gap-2 mt-4">
+        {Array.from({ length: count }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => api?.scrollTo(index)}
+            className={cn(
+              'h-2 w-2 rounded-full transition-all',
+              current === index ? 'w-4 bg-primary' : 'bg-muted-foreground/50'
+            )}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }

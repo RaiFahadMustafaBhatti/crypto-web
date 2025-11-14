@@ -20,7 +20,7 @@ export default function Home() {
 
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <CategoriesSection />
 
       <section className="w-full">
