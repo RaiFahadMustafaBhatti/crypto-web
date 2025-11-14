@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
   <Button variant="ghost" asChild className="main-nav-link">
-    <Link href={href} target="_blank" rel="noopener noreferrer">
+    <Link href={href}>
       {children}
     </Link>
   </Button>
@@ -101,6 +101,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="left" className="w-[280px] sm:w-[320px] p-0">
                  <SheetHeader className="p-4 border-b">
+                   <SheetTitle className="sr-only">Main Menu</SheetTitle>
                    <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2 text-xl font-headline font-bold text-primary">
                     CryptoVerse Explorer
                   </Link>
