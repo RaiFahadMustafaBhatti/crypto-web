@@ -1,12 +1,19 @@
+
 'use client';
 
 import Link from 'next/link';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, LogIn, Search, UserPlus } from 'lucide-react';
+import { Menu, LogIn, Search, UserPlus, ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 import { Input } from './ui/input';
 import { useRouter } from 'next/navigation';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
@@ -43,12 +50,40 @@ const SearchBar = ({ onSearch }: { onSearch?: () => void }) => {
     );
 };
 
+const CategoryDropdown = () => (
+    <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="main-nav-link">
+                Categories <ChevronDown className="ml-1 h-4 w-4" />
+            </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+            <DropdownMenuItem asChild><Link href="/category/crypto">Crypto</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/trading">Trading</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/altcoin">Altcoin</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/blockchain">Blockchain</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/defi">DeFi</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/nft">NFT</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/featured">Featured</Link></DropdownMenuItem>
+            <DropdownMenuItem asChild><Link href="/category/press-release">Press Release</Link></DropdownMenuItem>
+        </DropdownMenuContent>
+    </DropdownMenu>
+);
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
   const [searchSheetOpen, setSearchSheetOpen] = React.useState(false);
 
   const mainNavLinks = (
     <>
+      <NavLink href="/">Home</NavLink>
+      <CategoryDropdown />
+      <NavLink href="/blog">Blog</NavLink>
+    </>
+  );
+
+  const mobileNavLinks = (
+     <>
       <NavLink href="/">Home</NavLink>
       <NavLink href="/category/crypto">Crypto</NavLink>
       <NavLink href="/category/trading">Trading</NavLink>
@@ -60,7 +95,7 @@ export function Header() {
       <NavLink href="/category/press-release">Press Release</NavLink>
       <NavLink href="/blog">Blog</NavLink>
     </>
-  );
+  )
 
   return (
     <header className="bg-card border-b shadow-sm sticky top-0 z-50">
@@ -71,7 +106,7 @@ export function Header() {
                 CryptoVerse Explorer
             </Link>
              
-            <nav className="flex items-center space-x-1 main-nav flex-nowrap overflow-x-auto">
+            <nav className="flex items-center space-x-1 main-nav">
                 {mainNavLinks}
             </nav>
 
@@ -110,7 +145,7 @@ export function Header() {
                 </SheetHeader>
                 <div className="flex flex-col h-full">
                   <nav className="flex flex-col space-y-1 p-4 flex-grow" onClick={() => setMobileMenuOpen(false)}>
-                    {mainNavLinks}
+                    {mobileNavLinks}
                   </nav>
                    <div className="p-4 border-t grid grid-cols-2 gap-2">
                      <Button variant="outline" asChild className="w-full">
