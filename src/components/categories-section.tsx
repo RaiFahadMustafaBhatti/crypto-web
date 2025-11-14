@@ -21,7 +21,7 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   if (numPosts === 1) {
     return (
-      <div className="w-full">
+      <div className="w-full h-[400px] sm:h-auto">
         <BlogCard post={posts[0]} isFeatured={true} className="min-h-[400px]" />
       </div>
     );
@@ -29,7 +29,7 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   if (numPosts === 2) {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-[400px] sm:h-auto">
         <BlogCard post={posts[0]} className="h-full" />
         <BlogCard post={posts[1]} className="h-full" />
       </div>
@@ -38,23 +38,29 @@ const CategoryGrid = ({ posts }: { posts: BlogPost[] }) => {
 
   if (numPosts === 3) {
     return (
-      <div className="grid grid-cols-2 grid-rows-2 gap-4 w-full h-[400px] md:h-auto">
-        <div className="col-span-2 row-span-1 md:col-span-1 md:row-span-2">
-            <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full h-[400px] md:h-[400px]">
+            <div className="md:col-span-1">
+                <BlogCard post={posts[0]} isFeatured={true} className="h-full" />
+            </div>
+            <div className="hidden md:flex md:col-span-1 md:flex-col gap-4">
+                <BlogCard post={posts[1]} className="flex-1" />
+                <BlogCard post={posts[2]} className="flex-1" />
+            </div>
+             {/* Mobile view for 3 posts */}
+            <div className="grid grid-cols-2 gap-4 md:hidden">
+                <div className="col-span-2">
+                    <BlogCard post={posts[0]} isFeatured={true} className="h-full min-h-[200px]" />
+                </div>
+                <BlogCard post={posts[1]} className="h-full" />
+                <BlogCard post={posts[2]} className="h-full" />
+            </div>
         </div>
-        <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
-            <BlogCard post={posts[1]} className="h-full" />
-        </div>
-        <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1">
-            <BlogCard post={posts[2]} className="h-full" />
-        </div>
-      </div>
     );
   }
 
   // Default to 4 posts in a 2x2 grid
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 w-full">
+    <div className="grid grid-cols-2 gap-4 w-full">
       {posts.map((post) => (
         <BlogCard key={post.slug} post={post} className="h-full" />
       ))}
